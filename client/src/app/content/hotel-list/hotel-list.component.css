@@ -1,0 +1,129 @@
+.hotel-container{
+    background-color: white;
+    box-shadow: 1px 1px #d1d1d1;
+    margin-top: 15px;
+}
+
+.hotel-image-container{
+    width: 250px;
+    height: 200px;
+    margin: 10px 0px;
+    overflow: hidden;
+}
+
+.hotel-image-container img{
+    width: 300px;
+}
+
+.hotel-description .hotel-name{
+    color:#1c82b9;
+    font-weight: 600;
+    font-size: 16px
+}
+
+.hotel-container .hotel-description{
+    margin: 10px 0px;
+
+}
+
+.hotel-stars{
+    color: #ffbb00;
+}
+
+.hotel-stars i{
+    margin: 0 2px;
+}
+
+#curr_price {
+    line-height: 22px;
+}
+
+.hotel-amenity{
+    width: 18px;
+    margin: 0px 4px;
+}
+
+.hotel-container .hotel-price .price-text{
+    color: #212529;
+    font-size: 12px;
+    text-align: center;
+}
+.hotel-container .hotel-price .price-text div{
+    line-height: 22px;
+}
+
+.hotel-container .hotel-price{
+    border-width:1px;  
+    border-color: #d1d1d1;
+    border-style:dashed;
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+    margin: 10px 0;
+    color: #e16800;
+    text-align: center;
+}
+
+ .hotel-price-currency{
+    font-size: 22px;
+    position: relative;
+    top: -4px;
+}
+
+.hotel-price-value{
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.hotel-container .hotel-price .price-text-container{
+    position: relative;
+    top: 15px;
+    left: 0;
+    right: 0;
+    padding: 10px 10px;
+}
+
+.btn-hotel {
+    background-color: #002979;
+    border-color: #002979;
+    box-shadow: 0px 1px black;
+    width: 100%;
+    margin: 15px 0px;
+}
+
+.hotel-card{
+    margin: 15px;
+}
+
+.hotel-card .price-text{
+    color: #212529;
+    font-size: 14px;
+    text-align: center;
+}
+
+.hotel-card .hotel-price{
+    border-width:1px;  
+    border-color: #d1d1d1;
+    border-style:dashed;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    margin: 10px 0;
+    color: #e16800;
+    text-align: center;
+}
+
+.hotel-card .hotel-price .price-text-container{
+    position: relative;
+    top: 15px;
+    left: 0;
+    right: 0;
+    padding: 10px 10px;
+}
+
+.no-data {
+    text-align: center;
+    font-size: 24px;
+    color: gray;
+    margin: 50px;
+}

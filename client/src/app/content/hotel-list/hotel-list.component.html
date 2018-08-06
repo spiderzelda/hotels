@@ -1,0 +1,92 @@
+<ng-container *ngIf="hotels !== undefined && hotels.length == 0">
+  <p class="no-data">
+    No hay resultados que coincidan con tu criterio de búsqueda.
+  </p>
+
+</ng-container>
+
+<ng-container *ngIf="innerWidth > 991">
+  <div class="container hotel-container" *ngFor="let hotel of hotels; let i = index">
+    <div class="row">
+      <div class="col-4 hotel-image-container">
+        <img src="assets/images/hotels/{{hotel.image}}" alt="{{hotel.name}}" onError="this.src='assets/images/hotels/undefined.png';">
+      </div>
+      <div class="col-md-4 col-lg-5 hotel-description">
+        <p class="hotel-name">
+          {{hotel.name}}
+        </p>
+        <p class="hotel-stars">
+          <span class="hotel-stars" *ngFor="let star of intToList(hotel.stars)">
+            <i class="fa fa-star"></i>
+          </span>
+        </p>
+        <p class="hotel-amenities">
+          <span *ngFor="let amenity of hotel.amenities">
+            <img class="hotel-amenity" src="assets/icons/amenities/{{amenity}}.svg" alt="{{amenity}}" title="{{amenity}}">
+          </span>
+        </p>
+      </div>
+      <div class="col-md-4 col-lg-3 hotel-price">
+        <div class="price-text-container">
+          <p class="price-text">Precio por noche por habitación</p>
+          <div id="curr_price">
+            <span class="hotel-price-currency">
+              ARS
+            </span>
+            <span class="hotel-price-value  ">
+              {{hotel.price}}
+            </span>
+          </div>
+          <div>
+            <button class="btn btn-primary btn-hotel">
+              Ver hotel
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>
+
+<ng-container *ngIf='991 > innerWidth'>
+  <mat-card class="hotel-card" *ngFor="let hotel of hotels; let i = index">
+    <img mat-card-image src="assets/images/hotels/{{hotel.image}}" alt="{{hotel.name}}">
+    <mat-card-content>
+      <div class="col-12 hotel-description">
+        <p class="hotel-name">
+          {{hotel.name}}
+        </p>
+        <p class="hotel-stars">
+          <span *ngFor="let star of intToList(hotel.stars)">
+            <i class="fa fa-star"></i>
+          </span>
+        </p>
+        <p class="hotel-amenities">
+          <span *ngFor="let amenity of hotel.amenities">
+            <img class="hotel-amenity" src="assets/icons/amenities/{{amenity}}.svg" alt="{{amenity}}" title="{{amenity}}">
+          </span>
+        </p>
+      </div>
+
+      <div class="col-12 hotel-price">
+          <div class="price-text-container">
+            <p class="price-text">Precio por noche por habitación</p>
+            <div id="curr_price">
+              <span class="hotel-price-currency">
+                ARS
+              </span>
+              <span class="hotel-price-value  ">
+                {{hotel.price}}
+              </span>
+            </div>
+            <div>
+              <button class="btn btn-primary btn-hotel">
+                Ver hotel
+              </button>
+            </div>
+          </div>
+        </div>
+
+    </mat-card-content>
+  </mat-card>
+</ng-container>

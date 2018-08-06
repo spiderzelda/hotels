@@ -1,0 +1,144 @@
+<ng-container *ngIf="innerWidth > 991">
+  <div class="container-fluid">
+    <div class="filter-title">
+      Filtros
+      <span class="tag" *ngIf="nameTag">Nombre
+        <i (click)="cancelNameFilter()" class="fa fa-times-circle"></i>
+      </span>
+      <span class="tag" *ngIf="star5">
+        <i *ngFor="let star of intToList(5)" class="fa fa-star" aria-hidden="true"></i>
+        <i (click)="cancelStarFilter(5)" class="fa fa-times-circle"></i>
+      </span>
+      <span class="tag" *ngIf="star4">
+        <i *ngFor="let star of intToList(4)" class="fa fa-star" aria-hidden="true"></i>
+        <i (click)="cancelStarFilter(4)" class="fa fa-times-circle"></i>
+      </span>
+      <span class="tag" *ngIf="star3">
+        <i *ngFor="let star of intToList(3)" class="fa fa-star" aria-hidden="true"></i>
+        <i (click)="cancelStarFilter(3)" class="fa fa-times-circle"></i>
+      </span>
+      <span class="tag" *ngIf="star2">
+        <i *ngFor="let star of intToList(2)" class="fa fa-star" aria-hidden="true"></i>
+        <i (click)="cancelStarFilter(2)" class="fa fa-times-circle"></i>
+      </span>
+      <span class="tag" *ngIf="star1">
+        <i *ngFor="let star of intToList(1)" class="fa fa-star" aria-hidden="true"></i>
+        <i (click)="cancelStarFilter(1)" class="fa fa-times-circle"></i>
+      </span>
+
+    </div>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="filter-search-name">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          Nombre del hotel
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form (ngSubmit)="filterByName()">
+
+        <mat-form-field>
+          <input matInput [(ngModel)]="hotelName" name="hotelname" placeholder="Ingrese el nombre del hotel">
+        </mat-form-field>
+      </form>
+
+      <button (click)="filterByName()" class="btn btn-primary btn-hotel">
+        Buscar
+      </button>
+
+    </mat-expansion-panel>
+
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="filter-search-name">
+          <i class="fa fa-star" aria-hidden="true"></i>
+          Estrellas
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>
+        <mat-checkbox [(ngModel)]="allstar" (change)="filterByStars($event)">Todas las estrellas</mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star5" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(5); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star4" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(4); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star3" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(3); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star2" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(2); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star1" (change)="filterByStars($event)">
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+    </mat-expansion-panel>
+  </div>
+</ng-container>
+
+<ng-container *ngIf='991 > innerWidth'>
+  <div class="container-fluid">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title class="filter-search-name">
+          <i class="fa fa-search" aria-hidden="true"></i>
+          Filtrar
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <mat-form-field>
+        <input matInput [(ngModel)]="hotelName" placeholder="Ingrese el nombre del hotel">
+      </mat-form-field>
+
+      <button (click)="filterByName()" class="btn btn-primary btn-hotel">
+        Buscar
+      </button>
+      <p class="filter-search-name">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        Estrellas
+      </p>
+
+      <p>
+        <mat-checkbox [(ngModel)]="allstar" (change)="filterByStars($event)">Todas las estrellas</mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star5" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(5); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star4" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(4); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star3" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(3); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star2" (change)="filterByStars($event)">
+          <i *ngFor="let star of intToList(2); let i = index" class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+      <p>
+        <mat-checkbox [(ngModel)]="star1" (change)="filterByStars($event)">
+          <i class="fa fa-star" aria-hidden="true"></i>
+        </mat-checkbox>
+      </p>
+    </mat-expansion-panel>
+  </div>
+
+</ng-container>

@@ -1,0 +1,13 @@
+.header-logo {
+    padding-top: 1.3125rem;  
+}
+
+.navbar-custom-header {
+    background-color: #063a7d;
+    padding: 0 !important;
+}
+
+.navbar-custom-header img{
+    position: relative;
+    top: -10px;
+}
