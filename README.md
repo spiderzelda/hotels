@@ -34,37 +34,14 @@ En la carpeta assets/data se encuentra un archivo appsettings.json, donde se pue
 Pequeña aplicacion utilizando NodeJS y Express. La api permite:
 
 Consultar hoteles: GET http://localhost:8090/hotels
+
 Filtrar por nombre hoteles: GET http://localhost:8090/hotels/name?filter=NOMBRE
+
 Filtrar por estrellas hoteles: GET http://localhost:8090/hotels/stars?filter=123
-Crear hoteles: POST http://localhost:8090/hotels
-    Body: {
-        "id": "99999",
-        "name": "Hotel Stefanos",
-        "stars": 3,
-        "price": 994.18,
-        "image": "4900059_30_b.jpg",
-        "amenities": [
-            "safety-box",
-            "nightclub",
-            "deep-soaking-bathtub",
-            "beach",
-            "business-center"
-        ]
-    }
-Editar hoteles: PUT http://localhost:8090/hotels
-    Body: {
-        "id": "99999",
-        "name": "Hotel Movich",
-        "stars": 3,
-        "price": 994.18,
-        "image": "4900059_30_b.jpg",
-        "amenities": [
-            "safety-box",
-            "nightclub",
-            "deep-soaking-bathtub",
-            "beach",
-            "business-center"
-        ]
-    }
+
+Crear hoteles: POST http://localhost:8090/hotels (Body: Hotel Object del data.json)
+    
+Editar hoteles: PUT http://localhost:8090/hotels (Body: Hotel Object del data.json)
+    
 Eliminar hoteles: DELETE http://localhost:8090/hotels/99999
 
